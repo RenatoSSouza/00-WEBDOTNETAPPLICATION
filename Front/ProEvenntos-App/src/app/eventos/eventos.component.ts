@@ -7,12 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./eventos.component.scss']
 })
 export class EventosComponent {
-    public eventos: any;
-
+    public eventos: any = [];
+    showImage = true;
     constructor(private http: HttpClient){}
 
     ngOnInit(): void{
       this.getEventos();
+    }
+
+    alterImage(){
+      this.showImage = !this.showImage;
     }
 
     public getEventos():void{
